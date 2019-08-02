@@ -69,7 +69,10 @@
   margin-top: $gutter;
   @include break-at('medium') {
     margin-top: 0;
-    grid-column: span 6;
+    grid-column: span 7;
+  }
+  @include break-at('small') {
+    grid-column: span 12;
   }
 }
 
@@ -92,8 +95,16 @@
 // FAQ
 /////////////////////////////////////////////////////
 .faq__question {
+  margin-top: $gutter;
   @include break-at('small') {
     margin-top: $gutter;
+  }
+}
+
+.faq__answer {
+  margin-top: $gutter;
+  @include break-at('small') {
+    margin-top: 0;
   }
 }
 
