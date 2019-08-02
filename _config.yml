@@ -1,6 +1,7 @@
 ---
 title: NYC Graffiti Tour
 timezone: UTC
+incremental: true
 collections:
   posts:
     title: Posts

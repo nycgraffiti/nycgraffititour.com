@@ -10,20 +10,37 @@
 
 h1 {
   font-size: 120px;
+  @include break-at('medium') {
+    font-size: 80px;
+  }
+  @include break-at('small') {
+    font-size: 60px;
+  }
 }
 
 h2 {
   font-size: 45px;
+  @include break-at('small') {
+    font-size: 30px;
+  }
 }
 
 h3 {
   font-size: 30px;
+  @include break-at('small') {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
 p {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
+  @include break-at('small') {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 a:hover {

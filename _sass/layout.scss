@@ -10,7 +10,9 @@
   grid-column-gap: $gutter;
   grid-row-gap : $gutter;
   @include break-at('small') {
+    margin: $gutter auto;
     grid-column-gap: $gutter-half;
+    grid-row-gap : $gutter-half;
   }
 }
 
@@ -28,14 +30,23 @@
 
 .col-5 {
   grid-column: span 5;
+  @include break-at('small') {
+    grid-column: span 12;
+  }
 }
 
 .col-6 {
   grid-column: span 6;
+  @include break-at('small') {
+    grid-column: span 12;
+  }
 }
 
 .col-7 {
   grid-column: span 7;
+  @include break-at('small') {
+    grid-column: span 12;
+  }
 }
 
 .col-12 {
@@ -44,18 +55,46 @@
 
 // Masthead
 /////////////////////////////////////////////////////
-.masthead__tagline, .masthead__blurb {
+.masthead__tagline {
   z-index: 999;
   position: relative;
+  @include break-at('medium') {
+    grid-column: span 12;
+  }
 }
 
 .masthead__blurb {
+  z-index: 999;
+  position: relative;
   margin-top: $gutter;
+  @include break-at('medium') {
+    margin-top: 0;
+    grid-column: span 6;
+  }
 }
 
 .masthead__img {
   margin-top: -$gutter-10;
   z-index: 0;
+  max-height: 800px;
+  overflow: hidden;
+  @include break-at('medium') {
+    margin-top: -$gutter-6;
+  }
+  @include break-at('small') {
+    margin-top: -$gutter-3;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+// FAQ
+/////////////////////////////////////////////////////
+.faq__question {
+  @include break-at('small') {
+    margin-top: $gutter;
+  }
 }
 
 // Contact
