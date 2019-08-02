@@ -1,0 +1,50 @@
+// Units
+/////////////////////////////////////////////////////
+$gutter: 30px;
+$gutter-half: $gutter / 2;
+$gutter-2: $gutter*2;
+$gutter-3: $gutter*2;
+$gutter-4: $gutter*4;
+$gutter-6: $gutter*6;
+$gutter-8: $gutter*8;
+$gutter-10: $gutter*10;
+
+// Rule
+/////////////////////////////////////////////////////
+.rule {
+  padding-top: $gutter/2;
+  border-top: 10px solid white;
+}
+
+.rule-thin {
+  padding-top: $gutter/2;
+  border-top: 5px solid white;
+}
+
+// Pointer
+/////////////////////////////////////////////////////
+@mixin pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// Breakpoints
+/////////////////////////////////////////////////////
+$breakpoints: (
+  'small': 550px,
+  'medium':  1050px,
+  'large': 1440px
+) !default;
+
+@mixin break-at($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+   @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

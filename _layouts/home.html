@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+    <header class="wrapper rule">
+      <h2 class="col-12">
+        NYC Graffiti Tour
+      </h2>
+    </header>
+
+    <section class="masthead wrapper rule-thin">
+      <h1 class="masthead__tagline col-7">
+        {{site.tagline}}
+      </h1>
+      <h3 class="masthead__blurb col-5">
+        {{page.blurb}}
+      </h3>
+    </section>
+
+    <div class="masthead__img col-12">
+      <img src="{{page.banner-image}}"/>
+    </div>
+
+    <section class="faq wrapper rule-thin">
+      <h2 class="faq__title col-12">
+        FAQs
+      </h2>
+      {% for item in page.faq %}
+        <h3 class="faq__question col-6">
+          {{item.question}}
+        </h3>
+        <p class="faq__answer col-6">
+          {{item.answer}}
+        </p>
+      {% endfor %}
+    </section>
+
+    <footer class="contact wrapper rule-thin">
+      <div class="col-6">
+        <h2 class="contact__title">
+          {{page.contact}}
+        </h2>
+        <p class="contact__blurb">
+          {{page.contact-blurb | markdownify}}
+        </p>
+      </div>
+      <div class="contact__img col-6">
+        <img src="{{page.contact-image}}"/>
+      </div>
+    </footer>
+  </body>
+
+</html>
