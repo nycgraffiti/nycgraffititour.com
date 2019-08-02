@@ -1,7 +1,6 @@
 ---
 title: NYC Graffiti Tour
 timezone: UTC
-incremental: true
 collections:
   posts:
     title: Posts
@@ -9,6 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
+incremental: true
 tagline: NYC’s most immersive graffiti tour.
 description: NYC’s most immersive graffiti tour. Spend a night with a real NYC graffiti
   artist, painting real graffiti.
